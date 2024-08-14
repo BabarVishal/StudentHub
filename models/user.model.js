@@ -53,20 +53,21 @@ userSchema.pre("save", function(next){
 
 })
 
-userSchema.static("matchpasswordAndGenretToken",async function (email, password){
-    const user = await this.findOne({email});
-    if(!user) return false;
+userSchema.static("matchPasswordAndGenerateToken", async function(email, password){
+     const user = await this.findOne({email});
+     if(!user) throw new Error("User not Found!")
 
-    const salt = user.salt;
-    const hashpassword = user.hashpassword;
+     const salt = user.salt;
+     const hashpassword = user.password;
 
-    const userProvidedhash = createHmac('sha256', salt)
-    .update(user.password)
-    .digest("hex");
+     const userProvidedHash = createHmac('sha256', salt)
+     .update(password)
+     .digest("hex");
 
+     if(hashpassword !== userProvidedHash) throw new Error("Incorrect password!")
+ 
     const token = createTokenForUser(user);
     return token;
-
 })
 
 
