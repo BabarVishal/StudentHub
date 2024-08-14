@@ -52,21 +52,20 @@ userSchema.pre("save", function(next){
 
 })
 
-userSchema.static("matchPassword", async function(email, password){
+userSchema.static("matchpassword",async function (email, password){
     const user = await this.findOne({email});
-    if(!user) return null; // Return null if the user is not found instead of throwing an error
+    if(!user) return false;
 
     const salt = user.salt;
-    const hashpassword = user.password;
+    const hashpassword = user.hashpassword;
 
-    const userProvidedHash = createHmac('sha256', salt)
-    .update(password)
+    const userProvidedhash = createHmac('sha256', salt)
+    .update(user.password)
     .digest("hex");
 
-    if(hashpassword !== userProvidedHash) throw new Error("Incorrect password!");
-
     return user;
-});
+
+})
 
 
 const User = model("User", userSchema);

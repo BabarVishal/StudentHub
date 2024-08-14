@@ -14,7 +14,7 @@ mongoose.connect(process.env.MONGO_URL)
 .catch((error) => console.log("Detabase is not Conected!", error));
 
 //middleware
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({extended: false}));  //For passing the form deta:
 
 //front-end Conection.....
 app.set("view engine", "ejs");
