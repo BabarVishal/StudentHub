@@ -3,100 +3,100 @@
   <head>
     <%- include('./partials/head') %>
     <title>Signin</title>
+    <style>
+      /* Global Styles */
+      body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #2c2c2c;
+        color: #ddd;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+
+      /* Container */
+      .container {
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #3a3a3a;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        border-radius: 8px;
+      }
+
+      /* Form Styles */
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .form-label {
+        font-weight: bold;
+        margin-bottom: 8px;
+        color: #ddd;
+      }
+
+      .form-control {
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 4px;
+        border: 1px solid #555;
+        margin-bottom: 20px;
+        background-color: #444;
+        color: #ddd;
+        transition: border-color 0.3s;
+      }
+
+      .form-control:focus {
+        border-color: #007bff;
+        outline: none;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        background-color: #555;
+      }
+
+      /* Button Styles */
+      .btn-primary {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #007bff;
+        border: none;
+        border-radius: 4px;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .btn-primary:hover {
+        background-color: #0056b3;
+      }
+
+      /* Form Text */
+      .form-text {
+        font-size: 14px;
+        color: #aaa;
+      }
+
+      /* Media Queries */
+      @media (max-width: 576px) {
+        .container {
+          margin: 20px;
+          padding: 15px;
+        }
+
+        .btn-primary {
+          width: 100%;
+          padding: 12px;
+        }
+      }
+    </style>
   </head>
-  <style>
-    /* Global Styles */
-body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #f4f7f6;
-  color: #333;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-}
-
-/* Container */
-.container {
-  max-width: 400px;
-  margin: 50px auto;
-  padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-}
-
-/* Form Styles */
-form {
-  display: flex;
-  flex-direction: column;
-}
-
-.form-label {
-  font-weight: bold;
-  margin-bottom: 8px;
-  color: #444;
-}
-
-.form-control {
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 4px;
-  border: 1px solid #ddd;
-  margin-bottom: 20px;
-  transition: border-color 0.3s;
-}
-
-.form-control:focus {
-  border-color: #007bff;
-  outline: none;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
-
-/* Button Styles */
-.btn-primary {
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #007bff;
-  border: none;
-  border-radius: 4px;
-  color: #fff;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.btn-primary:hover {
-  background-color: #0056b3;
-}
-
-/* Form Text */
-.form-text {
-  font-size: 14px;
-  color: #666;
-}
-
-/* Media Queries */
-@media (max-width: 576px) {
-  .container {
-    margin: 20px;
-    padding: 15px;
-  }
-
-  .btn-primary {
-    width: 100%;
-    padding: 12px;
-  }
-}
-
-  </style>
   <body>
     <%- include('./partials/nav') %>
 
     <div class="container mt-4">
       <form action="/user/signin" method="post">
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label"
-            >Email address</label
-          >
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
           <input
             type="email"
             name="email"
@@ -125,3 +125,4 @@ form {
     <%- include('./partials/scripts') %>
   </body>
 </html>
+

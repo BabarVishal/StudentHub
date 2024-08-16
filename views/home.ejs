@@ -3,100 +3,100 @@
   <head>
     <%- include('./partials/head') %>
     <title>Homepage</title>
+    <style>
+      /* Global Styles */
+      body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #2c2c2c;
+        color: #ddd;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+
+      /* Container */
+      .container {
+        max-width: 1200px;
+        margin: 50px auto;
+        padding: 20px;
+      }
+
+      /* Row Styles */
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px; /* Space between columns */
+      }
+
+      /* Column Styles */
+      .col {
+        flex: 1;
+        min-width: 250px; /* Ensures columns have a minimum width */
+      }
+
+      /* Card Styles */
+      .card {
+        border: 1px solid #444;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+        transition: transform 0.3s, box-shadow 0.3s;
+        background-color: #3a3a3a;
+      }
+
+      .card-img-top {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+      }
+
+      .card-body {
+        padding: 15px;
+      }
+
+      .card-title {
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: #ddd;
+      }
+
+      /* Button Styles */
+      .btn-primary {
+        padding: 10px 15px;
+        font-size: 14px;
+        background-color: #007bff;
+        border: none;
+        border-radius: 4px;
+        color: #fff;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        transition: background-color 0.3s;
+      }
+
+      .btn-primary:hover {
+        background-color: #0056b3;
+      }
+
+      /* Card Hover Effect */
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+      }
+
+      /* Media Queries */
+      @media (max-width: 768px) {
+        .row {
+          flex-direction: column;
+        }
+
+        .col {
+          margin-bottom: 20px;
+        }
+      }
+    </style>
   </head>
-  <style>
-    /* Global Styles */
-body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #f4f7f6;
-  color: #333;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-}
-
-/* Container */
-.container {
-  max-width: 1200px;
-  margin: 50px auto;
-  padding: 20px;
-}
-
-/* Row Styles */
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px; /* Space between columns */
-}
-
-/* Column Styles */
-.col {
-  flex: 1;
-  min-width: 250px; /* Ensures columns have a minimum width */
-}
-
-/* Card Styles */
-.card {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.card-img-top {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-
-.card-body {
-  padding: 15px;
-}
-
-.card-title {
-  font-size: 18px;
-  margin-bottom: 10px;
-  color: #444;
-}
-
-/* Button Styles */
-.btn-primary {
-  padding: 10px 15px;
-  font-size: 14px;
-  background-color: #007bff;
-  border: none;
-  border-radius: 4px;
-  color: #fff;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  transition: background-color 0.3s;
-}
-
-.btn-primary:hover {
-  background-color: #0056b3;
-}
-
-/* Card Hover Effect */
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-/* Media Queries */
-@media (max-width: 768px) {
-  .row {
-    flex-direction: column;
-  }
-
-  .col {
-    margin-bottom: 20px;
-  }
-}
-
-  </style>
   <body>
     <%- include('./partials/nav') %>
 
@@ -119,3 +119,4 @@ body {
     <%- include('./partials/scripts') %>
   </body>
 </html>
+

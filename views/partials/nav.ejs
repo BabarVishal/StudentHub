@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark" data-bs-theme="dark">
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">StudentHub</a>
     <button
@@ -13,7 +13,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
@@ -22,16 +22,40 @@
           <a class="nav-link" href="/blog/add-new">Add Blog</a>
         </li>
         <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            <%= user.fullName %>
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Assignment
           </a>
           <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Sem1</a></li>
+            <li><a class="dropdown-item" href="#">Sem2</a></li>
+            <li><a class="dropdown-item" href="#">Sem3</a></li>
+            <li><a class="dropdown-item" href="#">Sem4</a></li>
+            <li><a class="dropdown-item" href="#">Sem5</a></li>
+            <li><a class="dropdown-item" href="#">Sem6</a></li>
+            <li><a class="dropdown-item" href="#">Sem7</a></li>
+            <li><a class="dropdown-item" href="#">Sem8</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Practical
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Sem1</a></li>
+            <li><a class="dropdown-item" href="#">Sem2</a></li>
+            <li><a class="dropdown-item" href="#">Sem3</a></li>
+            <li><a class="dropdown-item" href="#">Sem4</a></li>
+            <li><a class="dropdown-item" href="#">Sem5</a></li>
+            <li><a class="dropdown-item" href="#">Sem6</a></li>
+            <li><a class="dropdown-item" href="#">Sem7</a></li>
+            <li><a class="dropdown-item" href="#">Sem8</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <%= user.fullName %>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
             <li><a class="dropdown-item" href="/user/logout">Logout</a></li>
           </ul>
         </li>
@@ -53,5 +77,6 @@
   <div class="alert alert-danger" role="alert"><%= locals.error %></div>
 </div>
 <% } %>
+
 
 
