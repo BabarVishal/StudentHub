@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <%- include('./partials/head') %>
-    <title>Signin</title>
+    <title>Add New Blog</title>
   </head>
   <style>
     /* Global Styles */
@@ -17,7 +17,7 @@ body {
 
 /* Container */
 .container {
-  max-width: 400px;
+  max-width: 600px;
   margin: 50px auto;
   padding: 20px;
   background-color: #fff;
@@ -52,6 +52,11 @@ form {
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
+textarea.form-control {
+  height: 150px;
+  resize: vertical;
+}
+
 /* Button Styles */
 .btn-primary {
   padding: 10px 20px;
@@ -66,12 +71,6 @@ form {
 
 .btn-primary:hover {
   background-color: #0056b3;
-}
-
-/* Form Text */
-.form-text {
-  font-size: 14px;
-  color: #666;
 }
 
 /* Media Queries */
@@ -91,34 +90,35 @@ form {
   <body>
     <%- include('./partials/nav') %>
 
-    <div class="container mt-4">
-      <form action="/user/signin" method="post">
+    <div class="container mt-3">
+      <form action="/blog" method="post" enctype="multipart/form-data">
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label"
-            >Email address</label
-          >
+          <label for="coverImage" class="form-label">Cover Image</label>
           <input
-            type="email"
-            name="email"
+            type="file"
             class="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-          />
-          <div id="emailHelp" class="form-text">
-            We'll never share your email with anyone else.
-          </div>
-        </div>
-        <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input
-            name="password"
-            type="password"
-            class="form-control"
-            id="exampleInputPassword1"
+            id="coverImage"
+            name="coverImage"
+            aria-describedby="coverImage"
           />
         </div>
-
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            name="title"
+            aria-describedby="title"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="body">Body</label>
+          <textarea name="body" class="form-control" id="body"></textarea>
+        </div>
+        <div class="mb-3">
+          <button class="btn btn-primary">Submit</button>
+        </div>
       </form>
     </div>
 
