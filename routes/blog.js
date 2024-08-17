@@ -4,6 +4,7 @@ const path = require("path");
 
 const Blog = require("../models/blog");
 const Comment = require("../models/comment");
+const Profile = require("../models/profile.model");
 
 const router = Router();
 
@@ -29,11 +30,13 @@ router.get("/:id", async (req, res) => {
   const blog = await Blog.findById(req.params.id).populate("createdBy");
   console.log( "blogs deta :",blog);
   const comments = await Comment.find({ blogId: req.params.id }).populate("createdBy");
-
+  const profile = await Profile.findById(req.params._id).populate("crearedBy");
+  console.log("your Profile deta is :", profile);
   return res.render("blog", {
     user: req.user,
     blog,
     comments,
+    profile
   });
 });
 
@@ -55,6 +58,18 @@ router.post("/", upload.single("coverImage"), async (req, res) => {
     coverImageURL: `/uploads/${req.file.filename}`,
   });
   return res.redirect(`/blog/${blog._id}`);
+});
+
+router.post("/Profilepage", upload.single("profilePhoto"), async (req, res) => {
+  const { name, Bio, College, location } = req.body;
+  const Profile = await Profile.create({
+    name,
+    Bio,
+    College,
+    location,
+    profilePhoto: `/uploads/${req.file.filename}`,
+  });
+  return res.redirect(`/profilepage/${Profile._id}`);
 });
 
 module.exports = router;

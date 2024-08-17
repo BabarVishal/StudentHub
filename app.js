@@ -9,6 +9,7 @@ const Blog = require("./models/blog");
 
 const userRoute = require("./routes/user");
 const blogRoute = require("./routes/blog");
+const userProfile = require("./routes/user.profile")
 
 const {
   checkForAuthenticationCookie,
@@ -41,5 +42,6 @@ app.get("/", async (req, res) => {
 
 app.use("/user", userRoute);
 app.use("/blog", blogRoute);
+app.use("/user", userProfile);
 
 app.listen(PORT, () => console.log(`Server Started at PORT:${PORT}`));
